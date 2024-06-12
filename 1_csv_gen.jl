@@ -1,4 +1,4 @@
-@info("Loading packages...")
+@info "Loading packages..."
 using CSV, Scratch, DSP, DataFrames, Printf
 
 ## Setup parameters

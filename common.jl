@@ -1,11 +1,11 @@
-@info("Loading packages...")
+@info "Loading packages..."
 using CSV, Plots, Scratch, Statistics, MultivariateStats, DataFrames
 
 # Load a CSV.  We purposefully disable multithreading here, so that
 # we can more easily see the difference between our different threading
 # regimes.
 function load_csv(path)
-    return CSV.read(path, DataFrame; threaded=false)
+    return CSV.read(path, DataFrame, ntasks = 1)
 end
 
 # Sample correlation measure.  Doesn't do any shifting

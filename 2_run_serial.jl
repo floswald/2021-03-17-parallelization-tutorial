@@ -22,4 +22,4 @@ t_processing = @elapsed begin
         plot_data(f, df, m, m̂, best_pair)
     end
 end
-@info("Finished processing $(length(csv_files)) in $(t_processing) seconds ($(t_processing/length(csv_files)) per file)")
+@info "Finished processing $(length(csv_files)) in $(t_processing) seconds ($(t_processing/length(csv_files)) per file)"

@@ -62,7 +62,7 @@ task_result_closer = @async begin
 end
 
 # Finally, on the main thread, collect all results and plot them out
-@info("Awaiting results...")
+@info "Awaiting results..."
 while isopen(results)
     f, df, m, m̂, best_pair = @take_or_break(results)
     plot_data(f, df, m, m̂, best_pair)
@@ -75,4 +75,4 @@ wait(task_csv_loader)
 wait(task_result_closer)
 
 t_processing = time() - t_start
-@info("Finished processing $(length(csv_files)) in $(t_processing) seconds ($(t_processing/length(csv_files)) per file)")
+@info "Finished processing $(length(csv_files)) in $(t_processing) seconds ($(t_processing/length(csv_files)) per file)"
